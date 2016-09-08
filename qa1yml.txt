@@ -1,0 +1,28 @@
+---
+message: Hello World 2
+
+spring:
+    profiles: cloud
+    application:
+        name: ${vcap.application.application_name:atomicnumproducer}
+    data:
+        mongodb:
+            database: qa1MySQLMongo
+            username: qa1MySQLMongo
+            password: qa1MySQLMongo
+security:
+  basic:
+    enabled: false
+
+management:
+   security:
+     enabled: false
+
+---
+spring:
+    profiles: dev
+    data:
+        mysql:
+            database: qa1MySQLHost
+            username: qa1MySQLUsername
+            password: qa1MySQLpassword
